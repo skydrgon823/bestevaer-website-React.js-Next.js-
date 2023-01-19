@@ -1,0 +1,112 @@
+@use 'src/styles/_common' as *;
+
+.button {
+    display: inline-block;
+    margin-top: rem(40);
+    border-color: $color-red;;
+    color: $color-red;
+
+    &:hover {
+        color: $color-black;
+    }
+}
+
+.data {
+    min-width: rem(140);
+}
+
+.heading {
+    font-family: $font-primary-mono;
+    font-size: rem(30);
+    line-height: rem(32);
+}
+
+.label {
+    display: flex;
+    align-items: baseline;
+    flex-grow: 1;
+
+    & span {
+        flex-shrink: 0;
+    }
+
+    &::after {
+        content: '';
+        flex-shrink: 1;
+        display: inline-block;
+        width: 100%;
+        min-width: rem(4);
+        height: 1px;
+
+        background-color: currentColor;
+    }
+}
+
+.list {
+    @include max-container;
+
+    margin-top: rem(120);
+
+    & + * {
+        margin-top: rem(132);
+    }
+}
+
+.listItem {
+    & + .listItem {
+        margin-top: rem(66);
+    }
+}
+
+.listSpecs {
+    margin-top: rem(24);
+}
+
+.listItemSpecs {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.text {
+    margin-top: rem(14);
+    font-size: rem(15);
+    letter-spacing: 0.02em;
+}
+
+.thumbnail {
+    display: block;
+    width: 100%;
+    margin-top: rem(40);
+    line-height: 0;
+}
+
+@include mq-wide {
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .containerText {
+        width: pct(280, 1022);
+    }
+
+    .heading {
+        font-size: rem(41);
+        line-height: rem(42);
+
+        & span {
+            display: block;
+        }
+    }
+
+    .list {
+        padding-right: rem(50);
+        padding-left: rem(50);
+    }
+
+    .thumbnail {
+        flex-shrink: 0;
+        width: pct(714, 1022);
+        margin-top: 0;
+    }
+}

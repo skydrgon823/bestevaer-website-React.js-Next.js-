@@ -1,0 +1,74 @@
+@use 'src/styles/_common' as *;
+
+.container {
+    @include max-container;
+
+    & + .container {
+        margin-top: rem(120);
+    }
+
+    & + * {
+        margin-top: rem(130);
+    }
+}
+
+.containerContent {
+    margin-top: rem(30);
+}
+
+.heading {
+    color: $color-red;
+    font-family: $font-primary-mono;
+
+    & * {
+        font-size: rem(40);
+        line-height: rem(42);
+    }
+}
+
+.image {
+    margin-top: rem(40);
+}
+
+@include mq-wide {
+    .container {
+        padding-right: rem(50);
+        padding-left: rem(50);
+    }
+
+    .containerContent {
+        display: flex;
+        justify-content: space-between;
+        margin-top: rem(40);
+
+        &.isReversed {
+            flex-direction: row-reverse;
+
+            & .image {
+                margin-right: rem(28);
+                margin-left: 0;
+            }
+
+            & .text {
+                width: pct(352, 1022);
+            }
+        }
+    }
+
+    .heading {
+        & * {
+            font-size: rem(75);
+            line-height: rem(80);
+        }
+    }
+
+    .image {
+        margin-top: rem(6);
+        margin-left: rem(28);
+    }
+
+    .text {
+        flex-shrink: 0;
+        width: pct(280, 1022);
+    }
+}

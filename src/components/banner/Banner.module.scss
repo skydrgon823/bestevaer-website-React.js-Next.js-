@@ -1,0 +1,68 @@
+@use 'src/styles/_common' as *;
+
+.button {
+    display: inline-block;
+    min-width: rem(180);
+    margin-top: rem(42);
+}
+
+.container {
+    background-color: $color-red;
+
+    & + * {
+        margin-top: rem(126);
+    }
+}
+
+.containerContent {
+    @include max-container;
+
+    padding-top: rem(82);
+    padding-bottom: rem(100);
+    color: $color-white;
+    text-align: center;
+}
+
+.copy {
+    font-family: $font-primary-mono;
+
+    & h1,
+    & h2,
+    & h3 {
+        font-size: rem(30);
+        line-height: rem(30);
+
+        & + p {
+            margin-top: rem(30);
+        }
+    }
+
+    & p {
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+@include mq-wide {
+    .copy {
+        & h1,
+        & h2,
+        & h3 {
+            font-size: rem(54);
+            line-height: rem(54);
+        }
+
+        & p {
+            width: pct(500, $grid-max-width - 164);
+            font-size: rem(20);
+            line-height: rem(24);
+
+            &:first-child {
+                width: pct(640, $grid-max-width - 164);
+                margin-top: rem(-21);
+                font-size: rem(38);
+                line-height: rem(48);
+            }
+        }
+    }
+}

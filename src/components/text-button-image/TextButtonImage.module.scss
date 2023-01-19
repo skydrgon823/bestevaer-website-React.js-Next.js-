@@ -1,0 +1,78 @@
+@use 'src/styles/_common' as *;
+
+.button {
+    align-self: center;
+    margin-top: rem(30);
+    border-color: $color-black;
+    color: $color-black;
+}
+
+.container {
+    @include max-container;
+
+    & + * {
+        margin-top: rem(127);
+    }
+}
+
+.containerText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    & h1, h2, h3 {
+        font-family: $font-secondary;
+        font-size: rem(50);
+        line-height: rem(60);
+        text-align: center;
+
+        & + p {
+            margin-top: rem(20);
+        }
+    }
+
+    & p {
+        font-family: $font-primary-mono;
+    }
+}
+
+.image {
+    margin-top: rem(50);
+}
+
+@include mq-wide {
+    .button {
+        margin-top: rem(46);
+    }
+
+    .container {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    .containerText {
+        width: pct(380, 1122);
+        margin-left: rem(60);
+
+        & h1, h2, h3 {
+            font-size: rem(130);
+            line-height: rem(115);
+
+            & + p {
+                margin-top: 50px;
+            }
+        }
+
+        & p {
+            font-size: rem(19);
+            line-height: rem(30);
+        }
+    }
+
+    .image {
+        width: pct(510, 1122);
+        margin-top: 0;
+        margin-right: rem(44);
+    }
+}

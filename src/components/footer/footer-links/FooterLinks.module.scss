@@ -1,0 +1,20 @@
+@use 'src/styles/_common' as *;
+
+.list {
+    padding-left: rem(38);
+}
+
+.listItem {
+    & + .listItem {
+        margin-top: rem(24);
+    }
+}
+
+.listItemNested {
+    margin-top: rem(8);
+}
+
+.link {
+    font-family: $font-primary-mono;
+    font-size: rem(20);
+}

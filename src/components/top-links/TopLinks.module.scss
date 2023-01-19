@@ -1,0 +1,101 @@
+@use 'src/styles/_common' as *;
+
+.container {
+    @include max-container;
+
+    & + * {
+        margin-top: rem(120);
+    }
+}
+
+.containerLinksCircle {
+    margin-top: rem(20);
+}
+
+.heading {
+    margin-left: pct(50, $grid-max-width);
+}
+
+.linkCircle {
+    & span {
+        margin-left: rem(-14);
+        font-size: rem(180);
+        letter-spacing: -0.07em;
+    }
+}
+
+.linkRectangle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: rem(100);
+    padding-right: rem(50);
+    padding-left: rem(50);
+    border-radius: rem(50);
+    background-color: $color-red;
+    color: $color-white;
+    font-family: $font-primary-mono;
+    font-size: rem(30);
+    line-height: rem(30);
+}
+
+.listLinksCircle {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.listLinksRectangular {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: rem(14);
+    padding-left: rem(14);
+}
+
+.listItemLinksCircle {
+    width: calc(50% - #{rem(10)});
+    margin-top: rem(20);
+}
+
+.listItemLinksRectangular {
+    margin-top: rem(20);
+
+    &:not(:last-child) {
+        margin-right: rem(22);
+    }
+}
+
+@include mq-wide {
+    .containerLinksCircle {
+        display: flex;
+    }
+
+    .linkCircle {
+        margin-left: rem(36);
+
+        & span {
+            margin-left: rem(-14);
+            font-size: rem(220);
+            letter-spacing: -0.07em;
+        }
+    }
+
+    .linkRectangle {
+        padding-bottom: rem(8);
+        font-size: rem(70);
+    }
+
+    .listLinksCircle {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: rem(14);
+        flex-shrink: 0;
+        width: pct(664, $grid-max-width);
+        padding-left: rem(14);
+    }
+
+    .listItemLinksCircle {
+        width: 100%;
+        margin-top: 0;
+    }
+}

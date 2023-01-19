@@ -1,0 +1,56 @@
+@use 'src/styles/_common' as *;
+
+.caption {
+    font-size: rem(14);
+}
+
+.container {
+    @include max-container;
+
+    & + * {
+        margin-top: rem(180);
+    }
+}
+
+.containerImage {
+    margin-top: rem(60);
+}
+
+.quote {
+    font-family: $font-secondary;
+    font-size: rem(60);
+    line-height: rem(60);
+    text-align: center;
+
+    &::before {
+        content: "“";
+    }
+
+    &::after {
+        content: "”";
+    }
+
+    & p {
+        display: inline;
+    }
+}
+
+@include mq-wide {
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .containerImage {
+        width: pct(410, $grid-max-width);
+        margin-top: rem(128);
+        margin-right: pct(48, $grid-max-width);
+    }
+
+    .quote {
+        flex-shrink: 0;
+        width: pct(606, $grid-max-width);
+        font-size: rem(112);
+        line-height: rem(111);
+    }
+}

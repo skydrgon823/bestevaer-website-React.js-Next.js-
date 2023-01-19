@@ -1,0 +1,32 @@
+@use 'src/styles/_common' as *;
+
+.button {
+    margin-top: rem(20);
+}
+
+.containerFields {
+    margin-top: rem(30);
+}
+
+.form {
+    & input::placeholder {
+        font-size: rem(14);
+    }
+
+    & select {
+        padding-top: rem(2);
+        font-size: rem(14);
+    }
+}
+
+.input {
+    margin-top: rem(10);
+}
+
+.label {
+    font-family: $font-primary-bold;
+
+    & + * {
+        margin-top: rem(5);
+    }
+}

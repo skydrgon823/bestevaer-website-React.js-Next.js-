@@ -1,0 +1,78 @@
+@use 'src/styles/_common' as *;
+
+.button {
+    font-family: $font-primary-mono;
+    font-size: rem(30);
+    letter-spacing: -0.03em;
+    line-height: rem(46);
+    text-align: left;
+}
+
+.container {
+    background-color: $color-red;
+    color: $color-white;
+
+    & + * {
+        margin-top: rem(120);
+    }
+}
+
+.containerContent {
+    position: relative;
+}
+
+.containerBody {
+    position: absolute;
+    padding: rem(22);
+    visibility: hidden;
+    opacity: 0;
+
+    & h2,
+    & h3 {
+        font-size: rem(27);
+        line-height: rem(34);
+
+        & + p {
+            margin-top: rem(4);
+        }
+    }
+}
+
+.icon {
+    width: rem(20);
+    margin-left: rem(10);
+    margin-bottom: rem(4);
+    transition: transform 0.2s $easeInFastOutSlow;
+
+    &.isActive {
+        transform: scaleY(-1);
+    }
+}
+
+.list {
+    @include max-container;
+
+    padding-top: rem(28);
+    padding-bottom: rem(28);
+}
+
+.listItem {
+    position: relative;
+}
+
+@include mq-wide {
+    .button {
+        font-size: rem(71);
+        line-height: rem(86);
+    }
+
+    .containerBody {
+        width: pct(610, $grid-max-width);
+        padding: rem(22) rem(44);
+    }
+
+    .icon {
+        width: rem(50);
+        margin-left: rem(40);
+    }
+}

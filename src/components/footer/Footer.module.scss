@@ -1,0 +1,62 @@
+@use 'src/styles/_common' as *;
+
+.footer {
+    position: relative;
+    z-index: $z-index-footer;
+    margin-top: rem(128);
+    background-color: $color-red;
+    color: $color-white;
+}
+
+.container {
+    @include max-container;
+
+    padding: rem(40) rem(20);
+}
+
+.footerLinks {
+    & + .footerLinks {
+        margin-top: rem(21);
+    }
+}
+
+.footerForm {
+    margin-top: rem(40);
+    padding-top: rem(40);
+    border-top: 1px solid $color-white;
+}
+
+.footerGeneral {
+    margin-top: rem(58);
+    border-top: 1px solid $color-white;
+}
+
+@include mq-wide {
+    .container {
+        padding: rem(52) 0 rem(20);
+    }
+
+    .footerForm {
+        display: inline-flex;
+        flex-direction: column;
+        width: pct($grid-max-width - 760, $grid-max-width);
+        margin-top: 0;
+        padding-top: 0;
+        border-top: none;
+    }
+
+    .footerLinks {
+        width: calc(100% / 3);
+
+        & + .footerLinks {
+            margin-top: 0;
+        }
+    }
+
+    .nav {
+        display: inline-flex;
+        width: pct(760, $grid-max-width);
+        padding-right: rem(14);
+        border-right: 1px solid $color-white;
+    }
+}

@@ -1,0 +1,19 @@
+@use 'src/styles/_common' as *;
+
+.caption {
+    font-size: rem(14);
+}
+
+.container {
+    @include max-container;
+
+    & + * {
+        margin-top: rem(135);
+    }
+}
+
+.containerImage {
+    width: pct(815, $grid-max-width);
+    margin-right: auto;
+    margin-left: auto;
+}

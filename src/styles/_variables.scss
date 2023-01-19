@@ -1,0 +1,36 @@
+$base-size: 16;
+
+$color-black: #000000;
+$color-white: #FFFFFF;
+$color-grey-1: #E0E2E2;
+$color-grey-2: #575757;
+$color-grey-3: #CCCED0;
+$color-grey-4: #DFE2E1;
+$color-grey-5: #F2F2F2;
+$color-red: #FF0000;
+$color-blue: #2A446E;
+
+$font-primary-regular: 'Akkurat Regular', sans-serif;
+$font-primary-bold: 'Akkurat Bold', sans-serif;
+$font-primary-mono: 'Akkurat Mono', monospace;
+$font-secondary: 'Roslindale Display', serif;
+
+$easeInFastOutSlow: cubic-bezier(0.25, 0, 0, 1);
+
+$grid-max-width: 1122;
+$screen-width: 1222;
+$menu-nav-height: 124;
+$menu-nav-height-mobile: 40;
+
+$vw-narrow: 375px;
+$vw-regular: 768px;
+$vw-wide: 1024px;
+$vw-extra-wide: 1536px;
+
+$z-index-cookie-message: 5;
+$z-index-button-preview: 5;
+$z-index-menu-header: 4;
+$z-index-spinner: 4;
+$z-index-menu-overlay: 3;
+$z-index-footer: 3;
+$z-index-button-brochure: 2;

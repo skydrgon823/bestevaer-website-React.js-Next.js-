@@ -1,0 +1,84 @@
+@use 'src/styles/_common' as *;
+
+.button {
+    margin-top: rem(20);
+}
+
+.container {
+    @include max-container;
+
+    border-radius: rem(40);
+    padding: rem(30) rem(20) rem(60);
+    background-color: $color-red;
+    color: $color-white;
+
+    & + * {
+        margin-top: rem(120);
+    }
+}
+
+.containerContent {
+    margin-top: rem(40);
+}
+
+.containerCopy {
+    flex-shrink: 0;
+    font-size: rem(14);
+    line-height: rem(21);
+
+    & a {
+        @include underline;
+
+        font-family: $font-primary-bold;
+    }
+}
+
+.form {
+    margin-top: rem(40);
+}
+
+.heading {
+    font-family: $font-primary-mono;
+    font-size: rem(35);
+    line-height: rem(36);
+}
+
+.input {
+    margin-top: rem(20);
+
+    & + .input {
+        margin-top: rem(10);
+    }
+}
+
+.subHeading {
+    font-size: rem(24);
+    line-height: rem(28);
+}
+
+@include mq-wide {
+    .container {
+        border-radius: rem(80);
+        padding: rem(40) rem(40) rem(72);
+    }
+
+    .containerContent {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .containerCopy {
+        width: pct(400, $grid-max-width - 80);
+    }
+
+    .form {
+        width: pct(430, $grid-max-width - 80);
+        margin-top: 0;
+        margin-right: rem(94);
+    }
+
+    .heading {
+        font-size: rem(70);
+        line-height: rem(72);
+    }
+}

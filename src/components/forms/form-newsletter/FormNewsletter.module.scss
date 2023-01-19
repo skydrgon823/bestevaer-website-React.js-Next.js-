@@ -1,0 +1,59 @@
+@use 'src/styles/_common' as *;
+
+.button {
+    margin-top: rem(20);
+    border-width: rem(2);
+}
+
+.form {
+    & input::placeholder {
+        font-size: rem(14);
+    }
+
+    & select {
+        padding-top: rem(2);
+        font-size: rem(14);
+    }
+}
+
+.input {
+    // width: 100%;
+    // height: rem(48);
+    margin-top: rem(20);
+    // padding-right: rem(24);
+    // padding-left: rem(24);
+    // border: none;
+    // border-radius: rem(29);
+    // color: $color-black;
+    // font-family: $font-primary-mono;
+    // font-size: rem(20);
+    // font-size: rem(16);
+    // outline: none;
+
+    // &::placeholder {
+    //     color: $color-red;
+    // }
+
+    & + * {
+        margin-top: rem(10);
+    }
+}
+
+.inputCheckbox {
+    margin-top: rem(20);
+}
+
+// .inputSelect {
+//     margin-top: rem(20);
+// }
+
+.heading {
+    font-size: rem(24);
+    line-height: rem(28);
+}
+
+@include mq-wide {
+    .form {
+        padding-left: rem(25);
+    }
+}

@@ -1,0 +1,59 @@
+@use 'src/styles/_common' as *;
+
+.buttonShare {
+    margin-right: rem(10);
+}
+
+.buttonToggle {
+    @include underline;
+
+    font-family: $font-primary-bold;
+}
+
+.container {
+    @include max-container;
+
+    margin-top: rem(40);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.containerShare {
+    position: relative;
+    margin-top: rem(30);
+    flex-shrink: 0;
+}
+
+.containerShareButtons {
+    display: none;
+    position: absolute;
+    top: 100%;
+
+    &.isVisible {
+        display: block;
+    }
+}
+
+@include mq-wide {
+    .buttonShare {
+        margin-right: 0;
+        margin-left: rem(10);
+    }
+
+    .container {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        width: pct(572, $grid-max-width);
+        max-width: rem(572);
+    }
+
+    .containerShare {
+        text-align: right;
+        margin-top: 0;
+    }
+
+    .containerShareButtons {
+        right: 0;
+    }
+}

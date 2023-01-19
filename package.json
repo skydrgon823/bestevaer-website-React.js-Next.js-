@@ -1,0 +1,33 @@
+{
+  "name": "bestevaer",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "postbuild": "next-sitemap"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "gsap": "file:gsap-bonus.tgz",
+    "next": "^12.2.5",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-slick": "^0.28.1",
+    "react-transition-group": "^4.4.2",
+    "resize-observer-polyfill": "^1.5.1",
+    "sass": "^1.38.0",
+    "storyblok-js-client": "^4.1.4",
+    "storyblok-react": "^0.1.2",
+    "storyblok-rich-text-react-renderer": "^2.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.13",
+    "@babel/preset-env": "^7.18.10",
+    "eslint": "7.32.0",
+    "eslint-config-next": "11.1.0",
+    "next-sitemap": "^1.6.203"
+  }
+}

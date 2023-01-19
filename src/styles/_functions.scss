@@ -1,0 +1,48 @@
+@use "sass:math";
+
+@import 'src/styles/_variables';
+
+@function rem($value, $base: $base-size) {
+    @return math.div($value, $base) * 1rem;
+}
+
+@function em($value, $base: $base-size) {
+    @return math.div($value, $base) * 1em;
+}
+
+@function pct($width, $width-container) {
+    @return math.div($width, $width-container) * 100%;
+}
+
+@function grid($mq, $columns, $columns-parent, $grid-breaking-extra-space: 0) {
+    $columnPct: 0;
+    $columnRem: 0;
+
+    @if $mq == 'narrow' {
+        $columnPct: math.div(100%, $grid-columns-narrow) * $columns * math.div($grid-columns-narrow, $columns-parent);
+        $columnRem: rem($grid-gap-narrow) * math.div($columns-parent - $columns, $columns-parent);
+    } @else if $mq == 'wide' {
+        $columnPct: math.div(100%, $grid-columns-wide) * $columns * math.div($grid-columns-wide, $columns-parent);
+        $columnRem: rem($grid-gap-wide) * math.div($columns-parent - $columns, $columns-parent);
+    }
+
+    @return calc(#{$columnPct} - #{$columnRem - rem($grid-breaking-extra-space)});
+}
+
+@function offset($mq, $columns, $columns-parent, $useExtraGap: false) {
+    $columnPct: 0;
+    $columnRem: 0;
+    $gapRem: 0;
+
+    @if $mq == 'narrow' {
+        $columnPct: math.div(100%, $grid-columns-narrow) * $columns * math.div($grid-columns-narrow, $columns-parent);
+        $columnRem: math.div(rem($grid-gap-narrow), math.div($columns-parent, $columns)) + rem($grid-gap-narrow);
+        $gapRem: if($useExtraGap, 0, rem($grid-gap-narrow));
+    } @else if $mq == 'wide' {
+        $columnPct: math.div(100%, $grid-columns-wide) * $columns * math.div($grid-columns-wide, $columns-parent);
+        $columnRem: math.div(rem($grid-gap-wide), math.div($columns-parent, $columns)) + rem($grid-gap-wide);
+        $gapRem: if($useExtraGap, 0, rem($grid-gap-wide));
+    }
+
+    @return calc(#{$columnPct} + #{$columnRem - $gapRem});
+}

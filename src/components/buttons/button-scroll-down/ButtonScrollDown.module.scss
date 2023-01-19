@@ -1,0 +1,13 @@
+@use 'src/styles/_common' as *;
+
+.button {
+    width: rem(38);
+    height: rem(38);
+    border-radius: 50%;
+    background-color: $color-white;
+}
+
+.icon {
+    width: rem(20);
+    margin-top: rem(7);
+}

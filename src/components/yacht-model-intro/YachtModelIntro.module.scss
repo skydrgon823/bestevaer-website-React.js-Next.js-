@@ -1,0 +1,139 @@
+@use 'src/styles/_common' as *;
+
+.container {
+    position: relative;
+    color: $color-red;
+    font-family: $font-primary-mono;
+
+    & + * {
+        margin-top: rem(50);
+    }
+}
+
+.containerContent {
+    @include max-container;
+
+    margin-top: rem(40);
+}
+
+.containerHero {
+    position: relative;
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    // z-index: 1;
+    width: 100%;
+    overflow: hidden;
+}
+
+.containerTable {
+    overflow-x: auto;
+}
+
+.heading {
+    padding-top: rem(32);
+    padding-bottom: rem(32);
+    padding-left: rem(19);
+    font-size: rem(120);
+    letter-spacing: -0.03em;
+    line-height: rem(110);
+
+    & span {
+        display: block;
+    }
+}
+
+.hero {
+    position: absolute;
+    width: 100%;
+    height: calc(100% + 20px);
+    z-index: -1;
+}
+
+.logo {
+    width: calc(100% - #{rem(60)});
+    margin-left: rem(30);
+}
+
+.table {
+    border-collapse: collapse;
+    letter-spacing: -0.05em;
+
+    & th,
+    & td {
+        border-right: 1px solid $color-red;
+        border-left: 1px solid $color-red;
+        text-align: center;
+
+        &:first-child {
+            border-left: none;
+        }
+
+        &:last-child {
+            border-right: none;
+        }
+    }
+
+    & th {
+        font-weight: normal;
+        padding-right: rem(25);
+        padding-bottom: rem(8);
+
+        &:not(:first-child) {
+            padding-left: rem(25);
+        }
+
+        &:first-child {
+            text-align: left;
+        }
+    }
+
+    & td {
+        padding-right: rem(25);
+        padding-top: rem(4);
+
+        &:not(:first-child) {
+            padding-left: rem(25);
+        }
+    }
+
+    & tbody {
+        border-top: 1px solid $color-red;
+    }
+}
+
+.text {
+    max-width: rem(600);
+    margin-top: rem(45);
+    color: $color-red;
+}
+
+@include mq-wide {
+    .containerContent {
+        padding-right: rem(50);
+        padding-left: rem(50);
+    }
+
+    .containerHero {
+        min-height: rem(720);
+    }
+
+    .containerTable {
+        overflow: visible;
+    }
+
+    .heading {
+        font-size: rem(428);
+        line-height: rem(328);
+    }
+
+    .table {
+        font-size: rem(30);
+        line-height: rem(32);
+    }
+
+    .text {
+        font-size: rem(21);
+        line-height: rem(29);
+    }
+}

@@ -1,0 +1,96 @@
+@use 'src/styles/_common' as *;
+
+.container {
+    position: relative;
+
+    & + * {
+        margin-top: rem(30);
+    }
+}
+
+.containerTextImage {
+    @include max-container;
+
+    margin-top: rem(55);
+}
+
+.image {
+    margin-top: rem(55);
+}
+
+.logo {
+    position: absolute;
+    top: rem(30);
+    left: rem(30);
+    width: calc(100% - #{rem(60)});
+    z-index: -1;
+    color: $color-red;
+}
+
+.text {
+    padding: rem(20);
+    background-color: $color-white;
+    font-family: $font-primary-mono;
+
+    & h2,
+    h3 {
+        font-size: rem(39);
+        line-height: rem(40);
+
+        & + p {
+            margin-top: rem(28);
+        }
+    }
+
+    & p {
+        font-size: rem(21);
+        line-height: rem(28);
+    }
+}
+
+.title {
+    @include max-container;
+
+    position: relative;
+
+    & h1,
+    h2,
+    h3 {
+        margin-right: auto;
+        margin-left: auto;
+        padding-top: rem(60);
+        font-family: $font-secondary;
+        font-size: rem(78);
+        line-height: rem(78);
+        text-align: center;
+    }
+}
+
+@include mq-wide {
+    .containerTextImage {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: rem(16);
+    }
+
+    .image {
+        width: pct(315, 1090);
+        margin-right: rem(78);
+    }
+
+    .text {
+        width: pct(630, 1090);
+        padding: rem(19) rem(20) rem(20) rem(35);
+    }
+
+    .title {
+        & h1,
+        h2,
+        h3 {
+            width: 80%;
+            font-size: rem(188);
+            line-height: rem(168);
+        }
+    }
+}

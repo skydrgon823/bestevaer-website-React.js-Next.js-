@@ -1,0 +1,60 @@
+@use 'src/styles/_common' as *;
+
+.container {
+    @include max-container;
+
+    & + * {
+        margin-top: rem(100);
+    }
+}
+
+.figure {
+    margin-top: rem(100);
+    font-family: $font-primary-mono;
+    font-size: rem(30);
+    line-height: rem(36);
+    text-align: center;
+}
+
+.caption {
+    margin-top: rem(30);
+}
+
+.text {
+    & h1, h2, h3 {
+        font-family: $font-primary-mono;
+        font-size: rem(30);
+        letter-spacing: -0.05em;
+        line-height: rem(36);
+
+        & + p {
+            margin-top: rem(16);
+        }
+    }
+
+    & p {
+        & + p {
+            margin-top: rem(12);
+        }
+    }
+}
+
+@include mq-wide {
+    .container {
+        display: flex;
+        justify-content: space-between;
+        padding-right: rem(50);
+        padding-left: rem(50);
+    }
+
+    .figure {
+        width: pct(308, 1022);
+        margin-top: 0;
+    }
+
+    .text {
+        flex-shrink: 0;
+        width: pct(346, 1022);
+        margin-top: rem(14);
+    }
+}

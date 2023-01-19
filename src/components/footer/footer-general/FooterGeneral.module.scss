@@ -1,0 +1,61 @@
+@use 'src/styles/_common' as *;
+
+.container {
+    position: relative;
+    padding-top: rem(34);
+}
+
+.containerContact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: rem(50);
+}
+
+.copy {
+    margin-top: rem(8);
+    margin-right: rem(12);
+    margin-left: rem(12);
+    font-family: $font-primary-mono;
+    font-size: rem(13);
+}
+
+.link {
+    text-decoration: underline;
+}
+
+.listSocials {
+    display: flex;
+    margin-top: rem(40);
+}
+
+.listItemSocials {
+    margin-right: rem(22);
+}
+
+.logo {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@include mq-wide {
+    .containerContact {
+        margin-top: rem(32);
+    }
+
+    .copy {
+        margin-top: 0;
+    }
+
+    .listSocials {
+        position: absolute;
+        top: rem(34);
+        left: pct(802, $grid-max-width);
+        margin-top: 0;
+    }
+
+    .logo {
+        width: pct(180, $grid-max-width);
+    }
+}

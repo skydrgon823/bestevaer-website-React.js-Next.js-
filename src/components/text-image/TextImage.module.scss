@@ -1,0 +1,62 @@
+@use 'src/styles/_common' as *;
+
+.body {
+    margin-top: rem(20);
+}
+
+.container {
+    @include max-container;
+
+    & + * {
+        margin-top: rem(110);
+    }
+}
+
+.heading {
+    font-family: $font-primary-mono;
+    font-size: rem(30);
+    line-height: rem(37);
+}
+
+.image {
+    margin-top: rem(30);
+}
+
+@include mq-wide {
+    .body {
+        margin-top: rem(42);
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        padding: rem(24) pct(50, $screen-width);
+    }
+
+    .containerCopy {
+        width: pct(458, $grid-max-width);
+
+        &.isFlipped {
+            flex-direction: row-reverse;
+
+            & .body {
+                margin-top: rem(24);
+            }
+
+            & .containerCopy {
+                width: pct(338, $grid-max-width - 100);
+                margin-right: rem(-60);
+            }
+
+            & .image {
+                width: 70%;
+            }
+        }
+    }
+
+    .image {
+        flex-shrink: 0;
+        width: 50%;
+        margin-top: 0;
+    }
+}

@@ -1,0 +1,99 @@
+@use 'src/styles/_common' as *;
+
+.button {
+    position: relative;
+    line-height: 0;
+
+    &.isActive {
+        color: $color-red;
+
+        & .dot {
+            background-color: $color-red;
+            border-color: $color-red;
+        }
+    }
+}
+
+.canvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    // position: relative;
+    height: rem(120);
+    padding-top: rem(78);
+    padding-right: rem(50);
+    padding-left: rem(50);
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.containerScroll {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: rem(42);
+    margin-right: auto;
+    margin-left: auto;
+    line-height: 0;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 1px;
+        background-color: $color-black;
+    }
+
+    &::before {
+        left: 0;
+    }
+
+    &::after {
+        right: 0;
+    }
+}
+
+.dot {
+    display: inline-block;
+    width: rem(33);
+    height: rem(33);
+    border: 1px solid $color-black;
+    border-radius: 50%;
+    background-color: $color-white;
+}
+
+.list {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.listItem {
+    position: absolute;
+    margin-left: rem(6);
+}
+
+.year {
+    position: absolute;
+    top: rem(-30);
+    left: 0;
+    display: inline-block;
+    font-family: $font-primary-mono;
+    letter-spacing: -.06em;
+    font-size: rem(32);
+    line-height: rem(38);
+    text-align: right;
+    transform-origin: left top;
+    transform: rotate(-45deg);
+}

@@ -1,0 +1,18 @@
+@use 'src/styles/_common' as *;
+
+.icon {
+    width: rem(20);
+    height: rem(20);
+    fill: $color-red;
+}
+
+.link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(46);
+    height: rem(46);
+    border-radius: 50%;
+    background-color: $color-white;
+    color: $color-red;
+}

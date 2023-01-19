@@ -1,0 +1,84 @@
+@use 'src/styles/_common' as *;
+
+.container {
+    width: calc(100% - #{rem(20)});
+    margin-right: auto;
+    margin-left: auto;
+    padding: rem(35);
+    background-color: $color-red;
+    color: $color-white;
+    font-family: $font-primary-bold;
+
+    & + * {
+        margin-top: rem(100);
+    }
+
+    & a {
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    & p + p {
+        margin-top: rem(12);
+    }
+}
+
+.containerContent {
+    margin-top: rem(34);
+}
+
+.containerImages {
+    margin-top: rem(50);
+}
+
+.containerTextBottom {
+    margin-top: rem(12);
+}
+
+.heading {
+    padding-top: rem(16);
+    padding-bottom: rem(10);
+    border-bottom: 1px solid $color-white;
+    font-family: $font-primary-mono;
+    font-size: rem(71);
+    letter-spacing: -0.03em;
+    line-height: rem(80);
+    text-align: center;
+}
+
+.image {
+    display: block;
+
+    & + .image {
+        margin-top: rem(24);
+    }
+}
+
+@include mq-wide {
+    .container {
+        max-width: rem(820);
+        margin-right: auto;
+        margin-left: auto;
+        padding-right: rem(100);
+        padding-bottom: rem(55);
+        padding-left: rem(100);
+    }
+
+    .containerContent {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .containerImages {
+        width: 65%;
+        flex-shrink: 0;
+        margin-top: 0;
+    }
+
+    .containerText {
+        margin-left: rem(26);
+    }
+}

@@ -1,0 +1,93 @@
+@use 'src/styles/_common' as *;
+
+.header {
+    &.isHidden {
+        display: none;
+    }
+
+    & + * {
+        margin-top: rem($menu-nav-height-mobile);
+    }
+}
+
+.logo {
+    color: $color-red;
+    line-height: 0;
+    outline: none;
+}
+
+@include mq-wide {
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: $z-index-menu-header;
+        width: 100%;
+        background-color: $color-white;
+
+        & + * {
+            margin-top: rem($menu-nav-height);
+        }
+    }
+
+    .icon {
+        width: rem(12);
+        margin-top: rem(3);
+        margin-left: rem(5);
+        transition: transform 0.3s $easeInFastOutSlow;
+    }
+
+    .link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        padding-right: rem(14);
+        padding-bottom: rem(2);
+        padding-left: rem(14);
+        font-family: $font-primary-mono;
+        letter-spacing: -0.05em;
+        transition: background-color 0.2s linear, color 0.2s linear;
+
+        &:hover {
+            background-color: $color-red;
+            color: $color-white;
+        }
+
+        &.isActive {
+            background-color: $color-red;
+            color: $color-white;
+
+            & .icon {
+                transform: scaleY(-1);
+            }
+        }
+    }
+
+    .list {
+        display: flex;
+        height: 100%;
+    }
+
+    .listItem {
+        margin-right: rem(10);
+    }
+
+    .logo {
+        width: rem(90);
+        // height: rem(90);
+        margin-right: rem(12);
+    }
+
+    .nav {
+        position: relative;
+        display: flex;
+        align-items: center;
+        max-width: rem($screen-width);
+        margin-right: auto;
+        margin-left: auto;
+        height: rem($menu-nav-height);
+        padding-right: rem(22);
+        padding-left: rem(22);
+    }
+}

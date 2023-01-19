@@ -1,0 +1,70 @@
+@use 'src/styles/_common' as *;
+
+.container {
+    padding-top: rem(28);
+    padding-bottom: rem(88);
+    background-color: $color-grey-1;
+
+    & + * {
+        margin-top: rem(100);
+    }
+}
+
+.containerSlider {
+    @include max-container;
+
+    margin-top: rem(38);
+}
+
+.heading {
+    @include max-container;
+
+    font-family: $font-secondary;
+    font-size: rem(84);
+    line-height: rem(88);
+    text-align: center;
+}
+
+.link {
+    @include underline(1px, -2px);
+
+    position: relative;
+    top: rem(-10);
+    z-index: 1;
+}
+
+.slider {
+    width: pct(1080, $grid-max-width);
+    margin-right: auto;
+    margin-left: auto;
+
+    :global .slick-slide {
+        padding-right: rem(20);
+        padding-left: rem(20);
+    }
+
+    :global .slick-prev {
+        left: rem(-15);
+    }
+
+    :global .slick-next {
+        right: rem(-15);
+    }
+}
+
+@include mq-wide {
+    .link {
+        top: rem(22);
+        left: rem(50);
+    }
+
+    .slider {
+        :global .slick-prev {
+            left: rem(-40);
+        }
+
+        :global .slick-next {
+            right: rem(-40);
+        }
+    }
+}

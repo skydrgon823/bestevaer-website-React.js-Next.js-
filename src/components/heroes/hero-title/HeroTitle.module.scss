@@ -1,0 +1,71 @@
+@use 'src/styles/_common' as *;
+
+.buttonScrollDown {
+    display: block;
+    margin-top: rem(10);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.container {
+    position: relative;
+    font-family: $font-primary-mono;
+
+    & + * {
+        margin-top: rem(115);
+    }
+}
+
+.containerImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+}
+
+.description {
+    @include max-container;
+
+    margin-top: rem(52);
+    letter-spacing: -0.04em;
+}
+
+.heading {
+    position: absolute;
+    top: rem(18);
+    left: rem(16);
+    color: $color-red;
+    font-family: $font-primary-mono;
+    font-size: rem(40);
+    letter-spacing: -0.08em;
+    line-height: rem(42);
+}
+
+.image {
+    @include aspect-ratio(725, $screen-width);
+}
+
+.logo {
+    width: calc(100% - #{rem(60)});
+    margin-left: rem(30);
+    color: $color-red;
+}
+
+@include mq-wide {
+    .buttonScrollDown {
+        margin-top: rem(80);
+    }
+
+    .description {
+        padding-right: pct(210, 1022);
+        padding-left: rem(50);
+        font-size: rem(20);
+        line-height: rem(30);
+    }
+
+    .heading {
+        font-size: rem(166);
+        line-height: rem(150);
+    }
+}

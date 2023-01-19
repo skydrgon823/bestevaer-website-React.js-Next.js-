@@ -1,0 +1,55 @@
+@use 'src/styles/_common' as *;
+
+.container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-family: $font-primary-bold;
+    user-select: none;
+    cursor: pointer;
+
+    & input[type="checkbox"] {
+        position: absolute;
+        opacity: 0;
+        height: 0;
+        width: 0;
+        cursor: pointer;
+
+        &:checked ~ .checkbox {
+            background-color: currentColor;
+        }
+
+        &:focus ~ .checkbox {
+            outline: 1px dashed currentColor;
+        }
+    }
+
+    & label {
+        position: relative;
+        z-index: 1;
+        padding-left: rem(25);
+        cursor: pointer;
+    }
+
+    & p {
+        max-width: rem(360);
+    }
+
+    input[type="checkbox"] {
+        width: rem(16);
+        height: rem(16);
+        margin: 0;
+        margin-right: rem(10);
+        border: 1px solid currentColor;
+        background-color: transparent;
+    }
+}
+
+.checkbox {
+    position: absolute;
+    top: rem(3);
+    left: 0;
+    height: rem(16);
+    width: rem(16);
+    border: 1px solid currentColor;
+}

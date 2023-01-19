@@ -1,0 +1,76 @@
+@use 'src/styles/_common' as *;
+
+.caption {
+    font-family: $font-primary-mono;
+    font-size: rem(19);
+    line-height: rem(26);
+    margin-top: rem(5);
+}
+
+.container {
+    padding: rem(30);
+    background-color: $color-grey-5;
+
+    & + * {
+        margin-top: rem(126);
+    }
+}
+
+.imageRight {
+    margin-top: rem(30);
+}
+
+.quote {
+    margin-top: rem(40);
+    font-family: $font-secondary;
+    font-size: rem(45);
+    line-height: rem(51);
+    text-align: center;
+
+    &::before {
+        content: "“";
+    }
+
+    &::after {
+        content: "”";
+    }
+
+    & p {
+        display: inline;
+    }
+}
+
+@include mq-wide {
+    .caption {
+        width: 150%;
+    }
+
+    .containerContent {
+        @include max-container;
+
+        display: flex;
+    }
+
+    .containerImageLeft {
+        align-self: flex-end;
+        margin-left: rem(16);
+    }
+
+    .containerImageLeft {
+        flex-shrink: 0;
+        width: pct(240, 1067);
+    }
+
+    .imageRight {
+        flex-shrink: 0;
+        width: pct(252, 1067);
+        margin-top: 0;
+        margin-left: rem(30);
+    }
+
+    .quote {
+        width: pct(480, 1067);
+        margin-bottom: rem(32);
+        margin-left: auto;
+    }
+}

@@ -1,0 +1,169 @@
+@use 'src/styles/_common' as *;
+
+.body {
+    margin-top: rem(36);
+    padding: rem(10) rem(20);
+    background-color: $color-white;
+
+    & h2,
+    & h3 {
+        font-family: $font-primary-mono;
+        font-size: rem(30);
+        letter-spacing: -0.05em;
+        line-height: rem(38);
+    }
+
+    & p {
+        margin-top: rem(12);
+    }
+
+    & a {
+        @include underline(2px, -2px);
+
+        font-family: $font-primary-bold;
+    }
+}
+
+.columnRight {
+    text-align: center;
+}
+
+.container {
+    position: relative;
+
+    & + * {
+        margin-top: rem(88);
+    }
+
+    &.hasLogo {
+        padding-top: rem(104);
+    }
+
+    &.hasExtraLargeHeadings {
+        & .heading {
+            & h1,
+            & h2,
+            & h3 {
+                margin-top: rem(60);
+                font-size: rem(226);
+                line-height: rem(226);
+            }
+        }
+
+        & .body {
+            margin-top: rem(44);
+            padding: rem(24);
+
+            & h2,
+            & h3 {
+                font-size: rem(57);
+                line-height: rem(64);
+            }
+
+            & p {
+                margin-top: rem(30);
+            }
+        }
+    }
+}
+
+.containerContent {
+    @include max-container;
+}
+
+.heading {
+    margin-top: rem(6);
+
+    & h1,
+    & h2,
+    & h3 {
+        font-family: $font-secondary;
+        font-size: rem(120);
+        letter-spacing: -0.015em;
+        line-height: rem(110);
+        text-align: center;
+    }
+}
+
+.imageRight {
+    margin-top: rem(40);
+}
+
+.logo {
+    position: absolute;
+    top: rem(30);
+    left: rem(30);
+    z-index: -1;
+    width: calc(100% - #{rem(60)});
+    color: $color-red;
+}
+
+@include mq-wide {
+    .body {
+        width: pct(370, 594);
+        margin-left: pct(30, 594);
+        padding: rem(10) rem(20);
+    }
+
+    .columnRight {
+        width: pct(540, $grid-max-width);
+    }
+
+    .container {
+        &.hasExtraLargeHeadings {
+            & .body {
+                width: pct(478, 606);
+                margin-left: rem(-20);
+                padding: rem(24);
+
+                & h2,
+                & h3 {
+                    font-size: rem(77);
+                    line-height: rem(84);
+                }
+            }
+
+            & .heading {
+                & h1,
+                & h2,
+                & h3 {
+                    font-size: rem(350);
+                    line-height: rem(350);
+                }
+            }
+
+            & .imageLeft {
+                width: pct(510, 606);
+            }
+
+            & .imageRight {
+                width: pct(408, 515);
+                margin-top: rem(80);
+            }
+        }
+    }
+
+    .containerContent {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .heading {
+        & h1,
+        & h2,
+        & h3 {
+            font-size: rem(186);
+            line-height: rem(154);
+        }
+    }
+
+    .imageLeft {
+        width: pct(510, 594);
+        margin-left: pct(50, 594);
+    }
+
+    .imageRight {
+        width: pct(418, 540);
+        margin-top: rem(172);
+    }
+}

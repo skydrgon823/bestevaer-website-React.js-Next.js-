@@ -1,0 +1,140 @@
+@use 'src/styles/_common' as *;
+
+.containerCopy {
+    padding-top: rem(15);
+    padding-right: rem(15);
+    padding-left: rem(15);
+    background-color: $color-white;
+}
+
+.layoutOne,
+.layoutTwo,
+.layoutThree,
+.layoutFour {
+    & + * {
+        margin-top: rem(100);
+    }
+}
+
+.heading {
+    margin-top: rem(10);
+    font-family: $font-primary-mono;
+    font-size: rem(29);
+    letter-spacing: -0.03em;
+    line-height: rem(36);
+}
+
+.link {
+    @include underline;
+
+    display: inline-block;
+    margin-top: rem(25);
+    font-family: $font-primary-bold;
+}
+
+.linkThumbnail {
+    display: block;
+    overflow: hidden;
+    line-height: 0;
+
+    &:hover {
+        & .thumbnail {
+            transform: scale(1.02);
+        }
+    }
+}
+
+.text {
+    margin-top: rem(21);
+}
+
+.thumbnail {
+    transition: transform 1s $easeInFastOutSlow;
+}
+
+.time {
+    display: block;
+    font-family: $font-primary-bold;
+}
+
+@include mq-wide {
+    .containerCopy {
+        padding-top: 0;
+        padding-right: rem(5);
+        padding-left: rem(5);
+        margin-left: rem(-5);
+    }
+
+    .heading {
+        width: pct(275, 395);
+    }
+
+    .layoutOne {
+        display: flex;
+
+        & + * {
+            margin-top: rem(130);
+        }
+
+        & .containerCopy {
+            width: pct(410, $grid-max-width);
+            margin-left: rem(28);
+        }
+
+        & .linkThumbnail {
+            flex-shrink: 0;
+            width: pct(564, $grid-max-width);
+            margin-left: rem(50);
+        }
+    }
+
+    .layoutTwo {
+        padding-right: rem(50);
+        padding-left: rem(150);
+
+        & + * {
+            margin-top: rem(80);
+        }
+
+        & .containerCopy {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-top: rem(40);
+        }
+
+        & .containerText {
+            width: pct(400, $grid-max-width - 200);
+        }
+
+        & .text {
+            margin-top: 0;
+        }
+    }
+
+    .layoutThree {
+        display: flex;
+        flex-direction: row-reverse;
+        padding-right: rem(50);
+        padding-left: rem(50);
+
+        .containerCopy {
+            padding-right: rem(26);
+        }
+
+        & .linkThumbnail {
+            flex-shrink: 0;
+            width: pct(714, $grid-max-width - 100);
+        }
+    }
+
+    .layoutFour {
+        & .containerCopy {
+            width: pct(405, 458);
+        }
+
+        & .time {
+            padding-top: rem(6);
+        }
+    }
+}

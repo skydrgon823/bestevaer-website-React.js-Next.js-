@@ -1,0 +1,64 @@
+@use 'src/styles/_common' as *;
+
+.button {
+    align-self: flex-start;
+    margin-top: rem(24);
+    margin-right: auto;
+    margin-left: auto;
+    transition: opacity 0.2s linear;
+
+    &.isDisabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}
+
+.input {
+    & + .input {
+        margin-top: rem(18);
+    }
+
+    &.isHidden {
+        display: none;
+    }
+}
+
+.message {
+    margin-top: rem(20);
+}
+
+.logo {
+    margin-top: rem(20);
+    width: rem(78);
+}
+
+.paragraph {
+    font-family: $font-primary-mono;
+
+    & + .input {
+        margin-top: rem(32);
+    }
+}
+
+@include mq-wide {
+    .container {
+        padding-left: rem(20);
+    }
+
+    .message {
+        padding-left: rem(32);
+        font-size: rem(20);
+        line-height: rem(26);
+    }
+
+    .logo {
+        margin-left: rem(32);
+    }
+
+    .paragraph {
+        max-width: rem(230);
+        padding-left: rem(25);
+        font-size: rem(21);
+        line-height: rem(30);
+    }
+}

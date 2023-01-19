@@ -1,0 +1,108 @@
+@use 'src/styles/_common' as *;
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: rem(4);
+    border: 1px solid $color-blue;
+    border-radius: 50%;
+    background-color: $color-white;
+    color: $color-blue;
+    font-family: $font-primary-mono;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+    transition-property: background-color, color, border-color;
+
+    &.isActive {
+        border-color: $color-red;
+        background-color: $color-red;
+        color: $color-white;
+    }
+}
+
+.container {
+    @include max-container;
+}
+
+.containerContent {
+    margin-top: rem(52);
+}
+
+.containerImage {
+    position: relative;
+}
+
+.heading {
+    color: $color-red;
+    font-family: $font-primary-mono;
+    font-size: rem(35);
+    letter-spacing: -0.1em;
+    line-height: rem(50);
+}
+
+.media {
+    @include aspect-ratio(402, 662);
+}
+
+.list {
+    margin-top: rem(20);
+}
+
+.listItem {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s linear;
+
+    & h1, h2, h3 {
+        margin-top: rem(-3);
+        font-family: $font-primary-mono;
+        font-size: rem(30);
+        letter-spacing: -0.05em;
+        line-height: rem(37);
+    }
+
+    & p {
+        &:not(:first-child) {
+            margin-top: rem(14);
+        }
+    }
+
+    &.isActive {
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+
+.listItemButton {
+    position: absolute;
+}
+
+@include mq-wide {
+    .container {
+        padding-right: rem(50);
+        padding-left: rem(50);
+    }
+
+    .containerContent {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .containerImage {
+        flex-shrink: 0;
+        width: pct(662, 1022);
+    }
+
+    .heading {
+        font-size: rem(55);
+        line-height: rem(67);
+    }
+
+    .list {
+        position: relative;
+        width: pct(330, 1022);
+        margin-top: 0;
+    }
+}

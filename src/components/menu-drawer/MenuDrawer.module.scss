@@ -1,0 +1,65 @@
+@use 'src/styles/_common' as *;
+
+.buttonClose {
+    display: inline-flex;
+    align-items: center;
+    margin-top: rem(20);
+    margin-left: rem(20);
+    font-family: $font-primary-mono;
+}
+
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    overflow: auto;
+    background-color: $color-red;
+    color: $color-white;
+    transform: translate3d(100%, 0, 0);
+    transition: transform 0.4s $easeInFastOutSlow;
+
+    &.isOpen {
+        transform: translate3d(0%, 0, 0);
+    }
+}
+
+.containerLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: rem(60);
+}
+
+.icon {
+    width: rem(10);
+    margin-right: rem(10);
+    transform: rotate(90deg);
+}
+
+.linkCustom {
+    display: inline-block;
+    margin-top: rem(60);
+    font-size: rem(20);
+    line-height: rem(24);
+}
+
+.buttonOutline {
+    display: inline-block;
+    margin-top: rem(50);
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-right: rem(20);
+    padding-left: rem(20);
+}
+
+.listItem {
+    width: calc(100% / 3 - #{rem(20)});
+    margin-top: rem(30);
+}

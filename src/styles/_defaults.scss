@@ -1,0 +1,138 @@
+@use "sass:math";
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+::selection {
+    color: $color-white;
+    background-color: $color-grey-2;
+}
+
+a {
+    color: currentColor;
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    font-family: $font-primary-regular;
+    line-height: rem(23);
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overscroll-behavior-y: none;
+
+    &.is-using-tab {
+        & *:focus {
+            outline: 1px dashed $color-red;
+            outline-offset: rem(2);
+        }
+
+        & [type='checkbox']:focus {
+            & + span {
+                outline: 1px dashed $color-red;
+                outline-offset: rem(2);
+            }
+        }
+
+        & form {
+            & *:focus {
+                outline-color: $color-white;
+            }
+
+            & [type='checkbox']:focus {
+                & + span {
+                    outline-color: $color-white;
+                }
+            }
+        }
+    }
+}
+
+blockquote {
+    margin: 0;
+}
+
+button {
+    padding: 0;
+    border: none;
+    color: currentColor;
+    font-family: $font-primary-regular;
+    font-size: inherit;
+    background-color: transparent;
+    outline: none;
+    user-select: none;
+    cursor: pointer;
+    transition: color 0.2s linear;
+}
+
+fieldset {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+figure {
+    margin: 0;
+}
+
+html {
+    @include fluid-type($vw-narrow, $vw-regular, $base-size, 21);
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+video {
+    width: 100%;
+}
+
+input {
+    font-family: $font-primary-regular;
+    font-size: inherit;
+}
+
+legend {
+    padding: 0;
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    font-weight: normal;
+}
+
+p {
+    margin: 0;
+
+    & + p {
+        margin-top: rem(23);
+    }
+}
+
+section {
+    position: relative;
+}
+
+svg {
+    overflow: visible;
+}
+
+@include mq-wide {
+    html {
+        font-size: $base-size * 1px;
+    }
+}

@@ -1,0 +1,73 @@
+@use 'src/styles/_common' as *;
+
+.articlePreview {
+    margin-top: rem(40);
+}
+
+.container {
+    position: relative;
+    padding-top: rem(88);
+
+    & + * {
+        margin-top: rem(132);
+    }
+}
+
+.containerContent {
+    @include max-container;
+}
+
+.heading {
+    margin-top: rem(10);
+    font-family: $font-secondary;
+    font-size: rem(130);
+    letter-spacing: -0.01em;
+    line-height: rem(120);
+    text-align: center;
+}
+
+.intro {
+    margin-top: rem(60);
+    background-color: $color-white;
+    font-family: $font-primary-mono;
+    font-size: rem(20);
+    line-height: rem(30);
+}
+
+.logo {
+    position: absolute;
+    top: rem(30);
+    left: rem(30);
+    z-index: -1;
+    width: calc(100% - #{rem(60)});
+    color: $color-red;
+}
+
+@include mq-wide {
+    .articlePreview {
+        flex-shrink: 0;
+        width: pct(458, $grid-max-width);
+        margin-top: 0;
+    }
+
+    .containerContent {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .containerCopy {
+        width: pct(580, $grid-max-width);
+    }
+
+    .heading {
+        font-size: rem(220);
+        line-height: rem(176);
+    }
+
+    .intro {
+        width: pct(510, 580);
+        margin-top: rem(116);
+        margin-left: rem(50);
+        padding-right: rem(20);
+    }
+}

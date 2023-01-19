@@ -1,0 +1,56 @@
+@use 'src/styles/_common' as *;
+
+.buttonBack {
+    display: inline-flex;
+    align-items: center;
+    color: $color-grey-2;
+    font-family: $font-primary-bold;
+}
+
+.containerCopy {
+    width: calc(100% - #{rem(40)});
+    margin-top: rem(14);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.heading {
+    margin-top: rem(4);
+    font-family: $font-primary-mono;
+    font-size: rem(28);
+    line-height: rem(32);
+}
+
+.icon {
+    width: rem(14);
+    margin-right: rem(14);
+}
+
+.media {
+    display: block;
+}
+
+.text {
+    margin-top: rem(25);
+    font-size: rem(20);
+    line-height: rem(30);
+}
+
+.time {
+    display: block;
+    margin-top: rem(20);
+    font-family: $font-primary-bold;
+}
+
+@include mq-wide {
+    .container {
+        @include max-container;
+
+        padding-right: rem(50);
+        padding-left: rem(50);
+    }
+
+    .containerCopy {
+        width: pct(572, 1022);
+    }
+}

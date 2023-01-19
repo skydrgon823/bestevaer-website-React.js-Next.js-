@@ -1,0 +1,26 @@
+@use 'src/styles/_common' as *;
+
+.link {
+    position: fixed;
+    bottom: 0;
+    right: rem(15);
+    z-index: $z-index-button-brochure;
+    max-width: rem(120);
+    padding: rem(15) rem(20);
+    border: 1px solid $color-grey-2;
+    border-radius: rem(20) rem(20) 0 0;
+    background-color: $color-black;
+    color: $color-white;
+    font-family: $font-primary-bold;
+    font-size: rem(13);
+    line-height: rem(14);
+    text-align: center;
+}
+
+@include mq-wide {
+    .link {
+        right: pct(100, $screen-width);
+        max-width: rem(160);
+        padding: rem(15) rem(40);
+    }
+}

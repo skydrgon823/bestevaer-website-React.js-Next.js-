@@ -1,0 +1,1 @@
+export const PORTAL_ID_MENU_OVERLAY = 'menu-overlay';

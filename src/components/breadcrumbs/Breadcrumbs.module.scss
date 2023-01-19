@@ -1,0 +1,24 @@
+@use 'src/styles/_common' as *;
+
+.divider {
+    margin-right: rem(7);
+    margin-left: rem(7);
+}
+
+.list {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: $font-primary-mono;
+}
+
+.listItem {
+    &:first-child {
+        margin-right: rem(35);
+    }
+}
+
+.icon {
+    width: rem(14);
+    margin-right: rem(5);
+}

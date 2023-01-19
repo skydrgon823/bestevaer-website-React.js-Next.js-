@@ -1,0 +1,54 @@
+@use 'src/styles/_common' as *;
+
+.container {
+    width: calc(100% - #{rem(20)});
+    margin-right: auto;
+    margin-left: auto;
+    padding: rem(35);
+    background-color: $color-red;
+    color: $color-white;
+
+    & + * {
+        margin-top: rem(24);
+    }
+}
+
+.form {
+    margin-top: rem(21);
+}
+
+.heading {
+    padding-bottom: rem(14);
+    border-bottom: 1px solid $color-white;
+    font-family: $font-primary-mono;
+
+    & * {
+        font-size: rem(44);
+        letter-spacing: -0.066em;
+        line-height: rem(50);
+    }
+}
+
+.subheading {
+    font-family: $font-primary-bold;
+}
+
+.text {
+    max-width: rem(360);
+    margin-top: rem(15);
+    line-height: rem(22);
+}
+
+@include mq-wide {
+    .container {
+        max-width: rem(780);
+        padding: rem(40) rem(95) rem(80);
+    }
+
+    .heading {
+        & * {
+            font-size: rem(54);
+            line-height: rem(60);
+        }
+    }
+}

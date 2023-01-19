@@ -1,0 +1,74 @@
+@use 'src/styles/_common' as *;
+
+.container {
+    @include max-container;
+
+    & + * {
+        margin-top: rem(130);
+    }
+}
+
+.listItem {
+    display: inline-block;
+    max-width: 100%;
+    margin-top: rem(30);
+    padding: rem(30);
+    border: 1px solid $color-black;
+    border-radius: rem(30);
+    overflow: hidden;
+    background-color: $color-grey-5;
+    font-family: $font-primary-mono;
+
+    & h2, h3 {
+        font-size: rem(30);
+        line-height: rem(45);
+    }
+
+    & p {
+        margin-top: rem(14);
+    }
+}
+
+.title {
+    font-family: $font-secondary;
+    font-size: rem(40);
+    line-height: rem(60);
+    text-align: center;
+}
+
+@include mq-wide {
+    .container {
+
+    }
+
+    .list {
+        column-count: 2;
+        margin-top: rem(14);
+        padding-right: rem(30);
+        padding-left: rem(30);
+    }
+
+    .listItem {
+        margin-top: rem(23);
+        margin-right: rem(10);
+        margin-left: rem(10);
+        padding: rem(35) rem(35) rem(27) rem(70);
+        border-radius: rem(75);
+        break-inside: avoid-column;
+
+        & h2, h3 {
+            font-size: rem(37);
+            line-height: rem(50);
+        }
+
+        & p {
+            font-size: rem(19);
+            line-height: rem(30);
+        }
+    }
+
+    .title {
+        font-size: rem(83);
+        line-height: rem(120);
+    }
+}

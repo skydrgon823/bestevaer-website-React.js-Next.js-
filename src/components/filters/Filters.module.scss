@@ -1,0 +1,18 @@
+@use 'src/styles/_common' as *;
+
+.container {
+    @include max-container;
+
+    padding: rem(50);
+    background-color: $color-white;
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.listItem {
+    margin-top: rem(3);
+    margin-right: rem(3);
+}

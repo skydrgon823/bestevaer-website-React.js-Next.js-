@@ -1,0 +1,53 @@
+@use 'src/styles/_common' as *;
+
+.container {
+    @include max-container;
+
+    & + * {
+        margin-top: rem(134);
+    }
+}
+
+.containerBody {
+    margin-top: rem(15);
+}
+
+.containerCopy {
+    margin-top: rem(34);
+}
+
+.heading {
+    font-family: $font-primary-mono;
+    font-size: rem(28);
+    line-height: rem(36);
+}
+
+.link {
+    @include underline(2px);
+
+    display: inline-block;
+    margin-top: rem(14);
+    font-family: $font-primary-bold;
+}
+
+@include mq-wide {
+    .containerContent {
+        padding-right: pct(155, $grid-max-width);
+        padding-left: pct(50, $grid-max-width);
+    }
+
+    .containerBody {
+        width: pct(407, 917);
+        margin-top: 0;
+    }
+
+    .containerCopy {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .heading {
+        flex-shrink: 0;
+        width: pct(350, 917);
+    }
+}

@@ -1,0 +1,22 @@
+@use 'src/styles/_common' as *;
+
+.imageSlider {
+    margin-top: rem(30);
+
+    & + * {
+        margin-top: rem(40);
+    }
+}
+
+.videoEmbed {
+    width: 100%;
+    margin-top: rem(30);
+
+    & + * {
+        margin-top: rem(40);
+    }
+}
+
+.link {
+    text-decoration: underline;
+}

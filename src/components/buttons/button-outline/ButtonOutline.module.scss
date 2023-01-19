@@ -1,0 +1,17 @@
+@use 'src/styles/_common' as *;
+
+.button {
+    min-height: rem(32);
+    padding: rem(3) rem(12) rem(5);
+    border: 1px solid $color-white;
+    border-radius: rem(16);
+    color: $color-white;
+    font-family: $font-primary-mono;
+    text-align: center;
+    transition: background-color 0.2s linear, color 0.2s linear;
+
+    &:hover {
+        background-color: $color-white;
+        color: $color-red;
+    }
+}

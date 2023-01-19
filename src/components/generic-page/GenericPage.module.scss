@@ -1,0 +1,73 @@
+@use 'src/styles/_common' as *;
+
+.container {
+    padding-top: rem(30);
+    padding-bottom: rem(30);
+    background-color: $color-red;
+    color: $color-white;
+    font-family: $font-primary-mono;
+}
+
+.containerBody {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: rem(15);
+
+    & * + * {
+        margin-top: rem(14);
+    }
+
+    & h1 {
+        font-size: rem(30);
+        line-height: rem(34);
+
+        &:not(:first-child) {
+            margin-top: rem(30);
+        }
+    }
+
+    & h2,
+    & h3 {
+        font-size: rem(20);
+        line-height: rem(24);
+
+        &:not(:first-child) {
+            margin-top: rem(30);
+        }
+    }
+
+    & p {
+        font-size: rem(13);
+        line-height: rem(19);
+
+    }
+
+    & ul {
+        li {
+            display: flex;
+            align-items: baseline;
+            margin-top: 0;
+            text-indent: rem(5);
+
+            &::before {
+                content: "-";
+                text-indent: 0;
+            }
+        }
+    }
+}
+
+@include mq-wide {
+    .container {
+        padding-top: rem(70);
+        padding-bottom: rem(70);
+    }
+
+    .containerBody {
+        width: pct(816, $screen-width);
+        padding: rem(10) rem(100);
+        border-right: 1px solid $color-white;
+        border-left: 1px solid $color-white;
+    }
+}

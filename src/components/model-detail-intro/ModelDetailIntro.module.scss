@@ -1,0 +1,48 @@
+@use 'src/styles/_common' as *;
+
+.container {
+    & + * {
+        margin-top: rem(64);
+    }
+}
+
+.containerText {
+    @include max-container;
+
+    position: relative;
+    padding-top: rem(14);
+}
+
+.heading {
+    position: relative;
+    // display: inline-block;
+    margin-top: rem(78);
+    // background-color: $color-white;
+    // color: $color-red;
+    font-family: $font-primary-mono;
+    font-size: rem(54);
+    letter-spacing: -0.05em;
+    line-height: rem(50);
+}
+
+.hero {
+    & + * {
+        margin-top: 0;
+    }
+}
+
+.line {
+    display: block;
+}
+
+@include mq-wide {
+    .containerText {
+        padding-right: rem(48);
+        padding-left: rem(48);
+    }
+
+    .heading {
+        font-size: rem(94);
+        line-height: rem(90);
+    }
+}

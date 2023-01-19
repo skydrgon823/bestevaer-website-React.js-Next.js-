@@ -1,0 +1,7 @@
+@use 'src/styles/_common' as *;
+
+.image {
+    @include aspect-ratio(542, 785);
+
+    width: 100%;
+}

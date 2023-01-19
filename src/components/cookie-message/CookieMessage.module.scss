@@ -1,0 +1,71 @@
+@use 'src/styles/_common' as *;
+
+.buttonAccept {
+    width: 100%;
+    margin-top: rem(10);
+    border-color: $color-red;
+    background-color: $color-white;
+    color: $color-red;
+
+    &:hover {
+        border-color: $color-black;
+        color: $color-black;
+    }
+}
+
+.buttonInfo {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-color: $color-black;
+    background-color: $color-white;
+    color: $color-black;
+}
+
+.container {
+    position: fixed;
+    left: rem(20);
+    bottom: 0;
+    z-index: $z-index-cookie-message;
+    width: pct(700, $screen-width);
+    max-width: rem(525);
+    padding: rem(20) rem(20) rem(30);
+    border-radius: rem(20) rem(20) 0 0;
+    background-color: $color-grey-4;
+    box-shadow: 0 0 20px rgba($color-black, 0.2);
+}
+
+.containerButtons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: rem(26);
+}
+
+.text {
+    font-size: rem(14);
+    line-height: rem(18);
+    white-space: pre-line;
+}
+
+@include mq-wide {
+    .buttonAccept {
+        width: pct(200, 425);
+        margin-top: 0;
+    }
+
+    .buttonInfo {
+        width: pct(200, 425);
+    }
+
+    .container {
+        width: rem(525);
+    }
+
+    .containerButtons {
+        flex-direction: row;
+        padding-right: rem(15);
+        padding-left: rem(15);
+    }
+}

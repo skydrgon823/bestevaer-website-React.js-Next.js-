@@ -1,0 +1,65 @@
+@use 'src/styles/_common' as *;
+
+.button {
+    display: block;
+    margin-top: rem(20);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.container {
+    @include max-container;
+
+    position: relative;
+
+    & + * {
+        margin-top: rem(110);
+    }
+}
+
+.image {
+    width: 100%;
+    margin-top: rem(20);
+}
+
+.logo {
+    position: absolute;
+    top: rem(30);
+    left: rem(30);
+    width: calc(100% - #{rem(60)});
+    z-index: -1;
+    color: $color-red;
+}
+
+.title {
+    font-family: $font-secondary;
+    font-size: rem(120);
+    line-height: rem(130);
+    text-align: center;
+}
+
+@include mq-wide {
+    .button {
+        margin-top: rem(64);
+    }
+
+    .containerContent {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: rem(60);
+    }
+
+    .title {
+        margin-right: rem(50);
+        font-size: rem(224);
+        letter-spacing: -0.01em;
+        line-height: rem(228);
+    }
+
+    .image {
+        flex-shrink: 0;
+        width: pct(444, 1122);
+        margin-right: rem(26);
+    }
+}

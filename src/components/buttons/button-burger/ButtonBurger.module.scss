@@ -1,0 +1,40 @@
+@use 'src/styles/_common' as *;
+
+.burger {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 14px;
+    margin-left: rem(15);
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+
+    &.isActive {
+        & .line {
+            &:nth-child(1) {
+                transform: translateY(6px) rotate(-45deg);
+            }
+
+            &:nth-child(2) {
+                transform: scaleX(0);
+                transition-duration: 0.15s;
+            }
+
+            &:nth-child(3) {
+                transform: translateY(-6px) rotate(45deg);
+            }
+        }
+    }
+}
+
+.line {
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+    transition: transform 0.3s $easeInFastOutSlow;
+}

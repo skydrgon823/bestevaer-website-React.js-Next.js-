@@ -1,0 +1,46 @@
+@use 'src/styles/_common' as *;
+
+.author {
+    margin-top: rem(36);
+    font-family: $font-primary-bold;
+    text-underline-offset: rem(5);
+    text-decoration: underline;
+}
+
+.container {
+    @include max-container;
+
+    text-align: center;
+
+    & + * {
+        margin-top: rem(80);
+    }
+}
+
+.quote {
+    margin-right: auto;
+    margin-left: auto;
+    font-family: $font-secondary;
+    font-size: rem(60);
+    line-height: rem(60);
+
+    &::before {
+        content: "“";
+    }
+
+    &::after {
+        content: "”";
+    }
+
+    & p {
+        display: inline;
+    }
+}
+
+@include mq-wide {
+    .quote {
+        width: pct(800, $grid-max-width);
+        font-size: rem(120);
+        line-height: rem(120);
+    }
+}

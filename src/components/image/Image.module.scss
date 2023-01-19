@@ -1,0 +1,21 @@
+@use 'src/styles/_common' as *;
+
+.containerImage {
+    display: inline-block;
+    width: 100%;
+}
+
+.image {
+    opacity: 0;
+    transition: opacity 0.3s linear;
+
+    &.isLoaded {
+        opacity: 1;
+    }
+
+    &.isCovered {
+        @include cover-parent;
+
+        object-fit: cover;
+    }
+}

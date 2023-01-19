@@ -1,0 +1,41 @@
+@use 'src/styles/_common' as *;
+
+.container {
+    @include max-container;
+
+    & + * {
+        margin-top: rem(100);
+    }
+}
+
+.containerBody {
+    margin-top: rem(26);
+}
+
+.imageRight {
+    margin-top: rem(70);
+}
+
+@include mq-wide {
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .containerColumnLeft {
+        flex-shrink: 0;
+        width: pct(335, $grid-max-width);
+        margin-left: pct(152, $grid-max-width);
+    }
+
+    .imageLeft {
+        padding-right: rem(30);
+    }
+
+    .imageRight {
+        flex-shrink: 0;
+        width: pct(510, $grid-max-width);
+        margin-top: rem(196);
+        margin-right: pct(52, $grid-max-width);
+    }
+}

@@ -1,0 +1,63 @@
+@use 'src/styles/_common' as *;
+
+.button {
+    display: inline-block;
+    margin-top: rem(10);
+    margin-bottom: rem(10);
+    padding-right: rem(14);
+    padding-left: rem(14);
+    border-color: $color-red;
+    color: $color-red;
+    letter-spacing: 0.02em;
+
+    &:hover {
+        color: $color-black;
+    }
+}
+
+.container {
+    @include max-container;
+
+    text-align: center;
+
+    & + * {
+        margin-top: rem(120);
+    }
+}
+
+.heading {
+    font-family: $font-secondary;
+    font-size: rem(40);
+    line-height: rem(50);
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: rem(20);
+}
+
+.listItem {
+    width: calc(100% / 2 - #{rem(10)});
+    margin-top: rem(30);
+    text-align: left;
+}
+
+@include mq-wide {
+    .heading {
+        font-size: rem(83);
+        line-height: rem(100);
+    }
+
+    .list {
+        margin-right: rem(-60);
+        justify-content: left;
+    }
+
+    .listItem {
+        width: calc(100% / 3 - #{rem(44)});
+        padding-right: rem(16);
+        margin-right: rem(44);
+    }
+}

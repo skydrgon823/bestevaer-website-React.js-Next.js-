@@ -1,0 +1,51 @@
+@use 'src/styles/_common' as *;
+
+.container {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    select {
+        width: 100%;
+        height: rem(32);
+        padding-right: rem(2);
+        padding-bottom: rem(2);
+        padding-left: rem(7);
+        border: 1px solid $color-white;
+        border-radius: rem(16);
+        background-color: $color-white;
+        font-family: $font-primary-mono;
+        font-size: rem(14);
+        text-align: left;
+        cursor: pointer;
+        transition: background-color 0.2s linear, color 0.2s linear;
+        -webkit-appearance: none;
+
+        &:invalid,
+        & option[value=''] {
+            color: $color-red;
+            text-transform: uppercase;
+        }
+
+        & option {
+            padding-left: rem(4);
+        }
+
+        &:hover {
+            background-color: $color-red;
+            color: $color-white;
+
+            & ~ .icon {
+                color: $color-white;
+            }
+        }
+    }
+}
+
+.icon {
+    position: absolute;
+    right: rem(10);
+    width: rem(12);
+    color: $color-red;
+    transition: color 0.2s linear;
+}

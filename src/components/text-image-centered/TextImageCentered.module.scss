@@ -1,0 +1,60 @@
+@use 'src/styles/_common' as *;
+
+.body {
+    margin-top: rem(20);
+}
+
+.container {
+    @include max-container;
+
+    & + * {
+        margin-top: rem(44);
+    }
+}
+
+.containerBody {
+    margin-top: rem(35);
+}
+
+.containerCopy {
+    background-color: $color-white;
+}
+
+.heading {
+    font-family: $font-secondary;
+    font-size: rem(80);
+    line-height: rem(82);
+    letter-spacing: -0.01em;
+    text-align: center;
+}
+
+.image {
+    margin-top: rem(22);
+}
+
+@include mq-wide {
+    .container {
+        display: flex;
+        align-items: center;
+    }
+
+    .containerBody {
+        width: pct(340, 458);
+    }
+
+    .containerCopy {
+        margin-left: pct(-50, $grid-max-width);
+        width: pct(528, $grid-max-width);
+        padding: rem(18) pct(20, $grid-max-width) rem(18) pct(50, $grid-max-width);
+    }
+
+    .heading {
+        font-size: rem(120);
+        line-height: rem(105);
+    }
+
+    .image {
+        width: pct(566, $grid-max-width);
+        margin-left: pct(28, $grid-max-width);
+    }
+}

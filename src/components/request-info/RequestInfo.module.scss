@@ -1,0 +1,98 @@
+@use 'src/styles/_common' as *;
+
+.button {
+    display: inline-block;
+    margin-top: rem(34);
+}
+
+.container {
+    @include max-container;
+
+    padding: rem(40) rem(30);
+    border-radius: rem(30);
+    background-color: $color-red;
+    color: $color-white;
+
+    & + * {
+        margin-top: rem(100);
+    }
+}
+
+.containerContact {
+    margin-top: rem(80);
+}
+
+.containerLinks {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: rem(25);
+}
+
+.caption {
+    margin-top: rem(8);
+}
+
+.figure {
+    margin-top: rem(24);
+}
+
+.heading {
+    font-family: $font-primary-mono;
+}
+
+.link {
+    @include underline;
+
+    font-family: $font-primary-bold;
+    line-height: rem(24);
+}
+
+.text {
+    & h1, h2, h3 {
+        font-family: $font-primary-mono;
+        font-size: rem(30);
+        line-height: rem(32);
+        letter-spacing: -0.07em;
+
+        & + p {
+            margin-top: rem(60);
+        }
+    }
+}
+
+@include mq-wide {
+    .container {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: rem(60) rem(90) rem(40);
+        border-radius: rem(120);
+    }
+
+    .containerContact {
+        width: pct(245, 942);
+        margin-top: 0;
+        margin-right: rem(86);
+    }
+
+    .figure {
+        padding-right: rem(18);
+    }
+
+    .heading {
+        margin-top: rem(3);
+        font-size: rem(24);
+        line-height: rem(32);
+    }
+
+    .text {
+        flex-shrink: 0;
+        width: pct(380, 942);
+
+        & h1, h2, h3 {
+            font-size: rem(40);
+            line-height: rem(42);
+        }
+    }
+}

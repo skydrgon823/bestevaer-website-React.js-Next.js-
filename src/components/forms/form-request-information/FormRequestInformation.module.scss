@@ -1,0 +1,35 @@
+@use 'src/styles/_common' as *;
+
+.button {
+    align-self: center;
+}
+
+.fieldset {
+    max-width: rem(494);
+
+    & + * {
+        margin-top: rem(35);
+    }
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+
+    & input::placeholder {
+        font-size: rem(14);
+    }
+
+    & select {
+        padding-top: rem(2);
+        font-size: rem(14);
+    }
+}
+
+.input {
+    margin-top: rem(10);
+}
+
+.paragraph {
+    font-family: $font-primary-bold;
+}

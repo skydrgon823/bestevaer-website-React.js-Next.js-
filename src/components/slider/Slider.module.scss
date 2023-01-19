@@ -1,0 +1,9 @@
+@use 'src/styles/_common' as *;
+
+.link {
+    @include underline;
+
+    display: inline-block;
+    margin-top: rem(13);
+    font-family: $font-primary-bold;
+}

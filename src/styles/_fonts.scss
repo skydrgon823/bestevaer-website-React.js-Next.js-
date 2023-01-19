@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'Akkurat Regular';
+    font-display: swap;
+    src: url('/static/fonts/AkkuratLLWeb-Regular.woff2') format('woff2'),
+         url('/static/fonts/AkkuratLLWeb-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Akkurat Bold';
+    font-display: swap;
+    src: url('/static/fonts/AkkuratLLWeb-Bold.woff2') format('woff2'),
+         url('/static/fonts/AkkuratLLWeb-Bold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Akkurat Mono';
+    font-display: swap;
+    src: url('/static/fonts/AkkuratMonoLLWeb-Regular.woff2') format('woff2'),
+         url('/static/fonts/AkkuratMonoLLWeb-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Roslindale Display';
+    font-display: swap;
+    src: url('/static/fonts/Roslindale-DisplayCondensedLight.woff2') format('woff2'),
+         url('/static/fonts/Roslindale-DisplayCondensedLight.woff') format('woff');
+}

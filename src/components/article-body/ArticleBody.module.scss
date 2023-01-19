@@ -1,0 +1,45 @@
+@use 'src/styles/_common' as *;
+
+.container {
+    @include max-container;
+
+    margin-top: rem(52);
+
+    & p,
+    & h1,
+    & h2,
+    & h3 {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    p {
+        & + h1,
+        & + h2,
+        & + h3 {
+            margin-top: rem(50);
+        }
+    }
+
+    & h1,
+    & h2,
+    & h3 {
+        + * {
+            margin-top: rem(30);
+        }
+    }
+}
+
+@include mq-wide {
+    .container {
+        padding-right: rem(50);
+        padding-left: rem(50);
+
+        & p,
+        & h1,
+        & h2,
+        & h3 {
+            width: pct(572, 1022);
+        }
+    }
+}

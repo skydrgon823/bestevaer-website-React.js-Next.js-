@@ -1,0 +1,26 @@
+@use 'src/styles/_common' as *;
+
+.input * {
+    width: 100%;
+    height: rem(32);
+    padding-right: rem(6);
+    padding-left: rem(8);
+    border: none;
+    border-radius: rem(24);
+    color: $color-black;
+    font-family: $font-primary-mono;
+    // font-size: rem(20);
+    font-size: rem(16);
+    line-height: 0;
+    outline: none;
+
+    &::placeholder {
+        color: $color-red;
+    }
+
+    &.isLarge {
+        height: rem(48);
+        padding-right: rem(24);
+        padding-left: rem(24);
+    }
+}

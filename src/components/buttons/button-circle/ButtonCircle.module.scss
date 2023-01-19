@@ -1,0 +1,33 @@
+@use 'src/styles/_common' as *;
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-radius: 50%;
+    background-color: $color-red;
+
+    &::after {
+        content: '';
+        display: block;
+        padding-top: 100%;
+    }
+}
+
+.span {
+    margin-top: rem(-10);
+    color: $color-white;
+    font-family: $font-primary-mono;
+    font-size: rem(68);
+    line-height: rem(56);
+    text-align: center;
+}
+
+@include mq-wide {
+    .span {
+        margin-top: rem(-10);
+        font-size: rem(88);
+        line-height: rem(76);
+    }
+}

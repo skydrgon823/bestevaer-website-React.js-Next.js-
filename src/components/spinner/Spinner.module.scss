@@ -1,0 +1,36 @@
+@use 'src/styles/_common' as *;
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.container {
+    position: fixed;
+    z-index: $z-index-spinner;
+    top: rem(20);
+    right: rem(20);
+    width: rem(60);
+    height: rem(60);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid $color-white;
+    background-color: $color-red;
+}
+
+.spinner {
+    display: block;
+    width: rem(30);
+    height: rem(30);
+    border-radius: 50%;
+    border: rem(2) solid $color-white;
+    border-bottom-color: transparent;
+    // border-left-color: transparent;
+    animation: spin 1s linear infinite;
+}

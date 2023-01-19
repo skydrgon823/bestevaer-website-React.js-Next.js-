@@ -1,0 +1,42 @@
+@use 'src/styles/_common' as *;
+
+.buttonScrollDown {
+    position: absolute;
+    bottom: rem(16);
+}
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    & + * {
+        margin-top: rem(60);
+    }
+}
+
+.media {
+    width: 100%;
+    height: calc(100vh - #{rem($menu-nav-height-mobile)});
+}
+
+.logo {
+    position: absolute;
+    top: rem(30);
+    left: rem(30);
+    width: calc(100% - #{rem(60)});
+    color: $color-red;
+    pointer-events: none;
+}
+
+@include mq-wide {
+    .container {
+        & + * {
+            margin-top: rem(115);
+        }
+    }
+
+    .media {
+        height: calc(100vh - #{rem($menu-nav-height)});
+    }
+}

@@ -1,0 +1,18 @@
+@use 'src/styles/_common' as *;
+
+.button {
+    position: fixed;
+    bottom: rem(20);
+    right: rem(20);
+    z-index: $z-index-button-preview;
+    display: inline-flex;
+    align-items: center;
+    height: rem(30);
+    padding-right: rem(10);
+    padding-left: rem(10);
+    border: 1px solid $color-white;
+    border-radius: rem(15);
+    background-color: $color-red;
+    color: $color-white;
+    text-align: center;
+}

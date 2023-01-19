@@ -1,0 +1,39 @@
+@use 'src/styles/_common' as *;
+
+.container {
+    @include max-container;
+    font-family: $font-primary-mono;
+}
+
+.heading {
+    color: $color-red;
+    font-size: rem(35);
+    letter-spacing: -0.1em;
+    line-height: rem(50);
+}
+
+.imageSlider {
+    margin-top: rem(60);
+}
+
+.text {
+    max-width: rem(600);
+    margin-top: rem(25);
+}
+
+@include mq-wide {
+    .container {
+        padding-right: rem(50);
+        padding-left: rem(50);
+    }
+
+    .heading {
+        font-size: rem(55);
+        line-height: rem(67);
+    }
+
+    .text {
+        font-size: rem(20);
+        line-height: rem(29);
+    }
+}

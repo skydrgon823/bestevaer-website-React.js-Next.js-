@@ -1,0 +1,52 @@
+@use 'src/styles/_common' as *;
+
+.button {
+    z-index: 1;
+    width: rem(28);
+    height: rem(28);
+    padding: rem(7);
+    border-radius: 50%;
+    background-color: $color-grey-3;
+}
+
+.icon {
+    transform-origin: center;
+}
+
+.previous {
+    & .icon {
+        transform: translateX(#{rem(-1)}) rotate(90deg);
+    }
+}
+
+.next {
+    & .icon {
+        transform: translateX(#{rem(2)}) rotate(-90deg);
+    }
+}
+
+.nextLight {
+    background-color: $color-white;
+    right: rem(25);
+
+    & .icon {
+        transform: translateX(#{rem(2)}) rotate(-90deg);
+    }
+}
+
+.previousLight {
+    background-color: $color-white;
+    left: rem(25);
+
+    & .icon {
+        transform: translateX(#{rem(-1)}) rotate(90deg);
+    }
+}
+
+@include mq-wide {
+    .button {
+        width: rem(38);
+        height: rem(38);
+        padding: rem(9);
+    }
+}

@@ -1,0 +1,38 @@
+@use 'src/styles/_common' as *;
+
+.button {
+    font-family: $font-primary-mono;
+    font-size: rem(21);
+    line-height: rem(30);
+
+    &:hover {
+        text-decoration: underline;
+        text-underline-offset: rem(5);
+    }
+}
+
+.list {
+    @include max-container;
+
+    // position: sticky;
+    // top: rem(38);
+    // z-index: 2;
+    // background-color: $color-white;
+
+    & + * {
+        margin-top: rem(70);
+    }
+}
+
+
+@include mq-wide {
+    .list {
+        display: flex;
+        justify-content: center;
+    }
+
+    .listItem {
+        margin-right: rem(26);
+        margin-left: rem(26);
+    }
+}

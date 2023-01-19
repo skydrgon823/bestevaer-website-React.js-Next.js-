@@ -1,0 +1,61 @@
+@use 'src/styles/_common' as *;
+
+.container {
+    position: fixed;
+    top: 0;
+    z-index: $z-index-menu-header;
+    width: 100%;
+}
+
+.containerNav {
+    position: fixed;
+    top: rem($menu-nav-height-mobile);
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: $color-white;
+    transform: translate3d(0, -100%, 0);
+    transition: transform 0.4s $easeInFastOutSlow;
+
+    &.isOpen {
+        transform: translate3d(0, 0%, 0);
+    }
+}
+
+.containerBar {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: rem($menu-nav-height-mobile);
+    padding: rem(5) rem(15);
+    background-color: $color-white;
+}
+
+.icon {
+    width: rem(16);
+    margin-top: rem(5);
+    margin-left: rem(10);
+    transform: rotate(-90deg);
+}
+
+.link {
+    display: inline-flex;
+    align-items: center;
+    font-family: $font-primary-mono;
+    font-size: rem(30);
+    line-height: rem(50);
+}
+
+.list {
+    padding: rem(40) rem(20);
+}
+
+.logo {
+    width: rem(30);
+    color: $color-red;
+    line-height: 0;
+}

@@ -1,0 +1,7 @@
+@use 'src/styles/_common' as *;
+
+.container {
+    & + * {
+        margin-top: rem(132);
+    }
+}
